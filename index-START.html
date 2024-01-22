@@ -64,7 +64,17 @@
         audio.currentTime = 0; //rewind to the start//
         audio.play();
         key.classList.add("playing");
+        //transition end event//
       });
+      function removeTransition(e) {
+        console.log(event);
+      }
+
+      const keys = document.querySelectorAll(".key");
+      //cannot listen on all elements with array//
+      keys.forEach((key) =>
+        key.addEventListener("transitionend", removeTransition)
+      );
     </script>
   </body>
 </html>
